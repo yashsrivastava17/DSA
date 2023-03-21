@@ -16,7 +16,9 @@ public class HelloWorld
     System.out.println("2. initialise the linked list (implemented using insert at end)");
     System.out.println("3. insert at beginning");
     System.out.println("4. insert at end");
-    System.out.println("5. Exit");
+    System.out.println("5. Implement stack:");
+    System.out.println("6. Implement Queue:");
+    System.out.println("7. Exit");
     System.out.println("****************************");
     System.out.println();
     System.out.println("*~PLAYGROUND~* \n");
@@ -27,7 +29,7 @@ public class HelloWorld
     int choice = sc.nextInt();
     switch(choice){
         case 1:{
-            System.out.println("Enter 0 when you want to stop entering: \n");
+            System.out.println("Enter 0 when you want to stop entering: \n keep in mind that you can only initialise the linked list once ");
             int new1=1;
             int count=0;
             while(new1 !=0){
@@ -79,6 +81,66 @@ public class HelloWorld
         }
         
         case 5:{
+            System.out.println("Stack implementation")
+            System.out.println("1. initialise the Stack"
+            System.out.println("2. pop");
+            System.out.println("3. push");
+            System.out.println("4. peek");
+            System.out.println("5. display");
+            int stackchoice = sc.nextInt();
+            switch(stackchoice){
+                case 1: {
+                    System.out.println("Enter 0 when you want to stop entering: \n keep in mind that you can only initialise the linked list once ");
+                    int new1=1;
+                    int count=0;
+                    while(new1 !=0){
+                
+                        new1 = sc.nextInt();
+                            if (count==0 && new1 == 0){
+                                System.out.println("Need to have atleast one element dumbo");
+                                break;
+                                }
+                        if(new1 != 0){
+                        ll.insertatbeg(new1);
+                        count = count +1;
+                    System.out.println(new1 + " inserted succesfully at " + count);
+                    System.out.println();
+                        }
+                    }
+            
+                    System.out.println("Initiated stack implementation of Linked List with "+ count + " elements is: ");
+                    ll.printlist();
+                    System.out.println();
+                    break;
+                }
+                
+                case 2:{
+                    //delete element
+                }
+                
+                case 3:{
+                    //insert at top
+                    System.out.println("Enter the Data");
+                    int new2 = sc.nextInt();
+                    ll.insertatbeg(new2);
+                    System.out.print("Updated Stack is ");
+                    ll.printlist();
+                    System.out.println();
+                    break;
+                }
+                
+                case 4:{
+                    System.out.println("Top Element is");
+                    ll.peek();
+                }
+                    
+            }
+            
+            
+            
+        }
+        
+        case 7:{
             System.out.println("Thanks for playing! this was singly linked list");
             System.out.println("Your Linked List is ");
             ll.printlist();
@@ -139,6 +201,10 @@ class LinkedList{
             last = last.next;
         }
         last.next = n;
+    }
+    
+    public void peek(){
+        System.out.println(head.data;)
     }
     
     
